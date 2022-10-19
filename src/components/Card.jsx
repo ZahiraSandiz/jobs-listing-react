@@ -1,4 +1,5 @@
 import { css } from "@emotion/react";
+import FeaturedMessage from "./FeaturedMessage";
 
 
 const jobCard = css`
@@ -90,7 +91,6 @@ const headerCard =  css`
   align-items: center;
 `
 
-
 const companyName  = css`
   color: #5ca5a5;
   font-weight: 700;
@@ -112,22 +112,6 @@ const wrapFeaturedMessages = css`
   justify-content: space-between;
   align-items: center;
 `
-const featuredMessage = css`
-  user-select: none;
-  background-color: #5ca5a5;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 14px;
-  letter-spacing: -0.107692px;
-  color: #effafa;
-  padding: 7px 8px 3px;
-  border-radius: 12px;
-`
-// hacer con react->  si está destacado, poner un backgound de tal color
-// const featuredMessageFeatured = css`
-// background-color: #00ffff;
-// `
-
 
 const stylePosition = css`
   cursor: pointer;
@@ -234,55 +218,52 @@ const Card = (props)=>{
   const {company, logo, isNew, featured,  position, role, level, postedAt, contract, location, languages, tools} = props
 
   return(
+  
     <article css={jobCard}>
-
-    <img
-      css={image}
-      src={logo}
-      alt="Company logo"
-    />
-    <section css={wrapInformation}>
-      <div css={headerCard}>
-        <p css={companyName}>{company}</p>
-        <div css={wrapFeaturedMessages}>
-
-          {/* {isNew}  Preguntar, es nuevo? si viene true, entonces muestro el featuredMessage NEW!, sino no. */}
-          <div css={featuredMessage}>NEW!</div>
-
-           {/* {featured} Preguntar, está destacado? si viene true, entonces muestro el featuredMessage, FEATURED, sino no. */}
-          <div css={featuredMessage}>FEATURED</div>
+      <img
+        css={image}
+        src={logo}
+        alt="Company logo"
+      />
+      <section css={wrapInformation}>
+        <div css={headerCard}>
+          <p css={companyName}>{company}</p>
+          <div css={wrapFeaturedMessages}>
+            {isNew && <FeaturedMessage text="NEW!" background="green"/>}
+            
+            {featured && <FeaturedMessage text="FEATURED" background="black"/>}
+          </div>
         </div>
-      </div>
 
-      <div>
-        <p css={stylePosition}>{position}</p>
-      </div>
+        <div>
+          <p css={stylePosition}>{position}</p>
+        </div>
 
-      <div css={moreInformation}>
-        <span>{postedAt}</span>
-        <span css={point}></span>
-        <span>{contract}</span>
-        <span css={point}></span>
-        <span>{location}</span>
-      </div>
-    </section>
+        <div css={moreInformation}>
+          <span>{postedAt}</span>
+          <span css={point}></span>
+          <span>{contract}</span>
+          <span css={point}></span>
+          <span>{location}</span>
+        </div>
+      </section>
 
-    <div css={line}></div>
+      <div css={line}></div>
 
-    <section css={categoriesList}>
+      <section css={categoriesList}>
 
-      {/* {languages} Por cada valor (clave: valor), hacer una span category */}
+        {/* {languages} Por cada valor (clave: valor), hacer una span category */}
 
-      {/* FRONTEND Y SENIOR SON "role": "Frontend" Y "level": "Senior"
-      Hacer  que  el  valor de role y el valor de level se  conviertan en un span con la case category
-      */}
-      <span css={category}>Frontend</span> 
-      <span css={category}>Senior</span>
-      <span css={category}>HTML</span>
-      <span css={category}>CSS</span>
-      <span css={category}>JavaScript</span>
-    </section>
-  </article>
+        {/* FRONTEND Y SENIOR SON "role": "Frontend" Y "level": "Senior"
+        Hacer  que  el  valor de role y el valor de level se  conviertan en un span con la case category
+        */}
+        <span css={category}>Frontend</span> 
+        <span css={category}>Senior</span>
+        <span css={category}>HTML</span>
+        <span css={category}>CSS</span>
+        <span css={category}>JavaScript</span>
+      </section>
+    </article>
   )
 }
 
