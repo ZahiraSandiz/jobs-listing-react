@@ -1,5 +1,6 @@
 import { css } from "@emotion/react";
 import FeaturedMessage from "./FeaturedMessage";
+import TechnologiesList from "./CategoriesList";
 
 
 const jobCard = css`
@@ -170,55 +171,12 @@ const line = css`
   }
 `
 
-const categoriesList = css`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-
-  @media (min-width: 1024px) {
-    margin-left: auto;
-    max-width: 40%;
-  }
-
-`
-
-const category = css`
-  user-select: none;
-  height: 32px;
-  color: #5ca5a5;
-  background-color: #eff6f6;
-  font-size: 16px;
-  font-weight: 700;
-  border-radius: 4px 0 0 4px;
-  padding: 5px 11px 3px 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.5s;
-
-  &:hover {
-  color: #ffffff;
-  background-color: #5ca5a5;
-  }
-`
-
-// Si la categoria fue clickeada (seleccionada) ahi van estos estilos...
-// .categories-list > .category--selected {
-//   cursor: default;
-//   background: #5ca5a5;
-//   color: #eff6f6;
-// }
-
 
 const Card = (props)=>{
 
   const {company, logo, isNew, featured,  position, role, level, postedAt, contract, location, languages, tools} = props
 
   return(
-  
     <article css={jobCard}>
       <img
         css={image}
@@ -250,19 +208,8 @@ const Card = (props)=>{
 
       <div css={line}></div>
 
-      <section css={categoriesList}>
-
-        {/* {languages} Por cada valor (clave: valor), hacer una span category */}
-
-        {/* FRONTEND Y SENIOR SON "role": "Frontend" Y "level": "Senior"
-        Hacer  que  el  valor de role y el valor de level se  conviertan en un span con la case category
-        */}
-        <span css={category}>Frontend</span> 
-        <span css={category}>Senior</span>
-        <span css={category}>HTML</span>
-        <span css={category}>CSS</span>
-        <span css={category}>JavaScript</span>
-      </section>
+      <TechnologiesList role={role} level={level} languages={languages} tools={tools}/>
+     
     </article>
   )
 }
