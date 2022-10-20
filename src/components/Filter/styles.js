@@ -1,21 +1,21 @@
 import { css } from "@emotion/react";
 
-const filter = css`
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translate3d(0, -100%, 0);
-  }
+const styleFilter = css`
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translate3d(0, -100%, 0);
+    }
 
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
   }
-}
   display: flex;
   animation-duration: 0.6s;
   animation-name: fadeInDown;
-`
+`;
 
 const category = css`
   user-select: none;
@@ -29,7 +29,7 @@ const category = css`
   display: flex;
   align-items: center;
   justify-content: center;
-`
+`;
 
 const deleteCategory = css`
   cursor: pointer;
@@ -66,20 +66,6 @@ const deleteCategory = css`
     transform: rotate(-45deg);
     right: 8px;
   }
-`
+`;
 
-
-const ButtonFilter = ()=>{
-  return (
-
-    <div css={filter}>
-      <span css={category}>Javascript</span>
-      <button css={deleteCategory}>X</button>
-    </div>
-    
-  )
-}
-
-export default ButtonFilter
-
-
+export { styleFilter, deleteCategory, category };

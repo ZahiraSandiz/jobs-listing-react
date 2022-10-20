@@ -1,9 +1,7 @@
 import { css } from "@emotion/react";
-import ButtonFilter from "./ButtonFilter";
-
+import Filter from "./Filter/Filter";
 
 const wrap = css`
-
   margin-top: -36px;
   padding: 20px 19px;
   background-color: #ffffff;
@@ -13,7 +11,9 @@ const wrap = css`
   justify-content: space-between;
   align-items: center;
   /* display: none !important; */
-
+  @media (min-width: 1024px) {
+    padding: 4px 20px 4px 40px;
+  }
 
   @keyframes fadeIn {
     from {
@@ -28,7 +28,8 @@ const wrap = css`
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
   animation-duration: 0.5s;
-`
+`;
+
 const buttonClear = css`
   user-select: none;
   font-family: "League Spartan", sans-serif;
@@ -46,39 +47,35 @@ const buttonClear = css`
   transition: all 0.6s;
 
   &:hover {
-  color: #5ca5a5;
-  text-decoration: underline;
+    color: #5ca5a5;
+    text-decoration: underline;
   }
 
   @media (min-width: 1024px) {
     padding: 20px;
-}
-`
+  }
+`;
 
 const wrapButtons = css`
- display: flex;
+  display: flex;
   flex-wrap: wrap;
   gap: 16px;
-`
+`;
 
-// ---- categories-list es wrapButtons ----
-// .categories-list > .category--selected {
-//   cursor: default;
-//   background: #5ca5a5;
-//   color: #eff6f6;
-// }
+const FilterBar = (props) => {
+  const { filters, setFilters } = props;
 
-const Filter = ()=> {
-  return(
-  <div css={wrap}>
-    <div css={wrapButtons}> 
-      <ButtonFilter/>
+  return (
+    <div css={wrap}>
+      <div css={wrapButtons}>
+        {filters.map((filter, index) => (
+          <Filter key={filter} setFilters={setFilters} filter={filter} />
+        ))}
+      </div>
+
+      <button css={buttonClear}>Clear</button>
     </div>
-    
-    <button css={buttonClear}>Clear</button>
-  </div>
-  )
-}
+  );
+};
 
-export default Filter
-
+export default FilterBar;

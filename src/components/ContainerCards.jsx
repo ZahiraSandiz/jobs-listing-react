@@ -16,13 +16,16 @@ const container = css`
   }
 `
 
-const ContainerCards = ()=>{
+const ContainerCards = (props)=>{
+  const {filters, setFilters} = props
   return(
     <main css={container}>
 
-      {jobsData.map((currentJob) => <Card key={currentJob.id} {...currentJob} />)}
-
-
+      {jobsData.map((currentJob) =>
+      <Card key={currentJob.id}
+            {...currentJob}
+            filters={filters}
+            setFilters={setFilters} />)}
     </main>
   )
 }

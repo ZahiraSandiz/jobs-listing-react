@@ -1,41 +1,49 @@
 import { css } from "@emotion/react";
 import Category from "./Category";
 
-
 const list = css`
-display: flex;
-flex-wrap: wrap;
-gap: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
 
-@media (min-width: 1024px) {
-  margin-left: auto;
-  max-width: 40%;
-}
-`
+  @media (min-width: 1024px) {
+    margin-left: auto;
+    max-width: 40%;
+  }
+`;
 
 const CategoriesList = (props) => {
-  const {role, level, languages, tools} = props
-  return(
+  const { role, level, languages, tools, filters, setFilters } = props;
 
+  return (
     <section css={list}>
-     
-      <Category text={role} />
-      <Category text={level} />
+      <Category text={role} filters={filters} setFilters={setFilters} />
 
-      {languages.map((element) => {
-        return(
-          <Category text={element} />
-        )
+      <Category text={level} filters={filters} setFilters={setFilters} />
+
+      {languages.map((element, index) => {
+        return (
+          <Category
+            key={index}
+            text={element}
+            filters={filters}
+            setFilters={setFilters}
+          />
+        );
       })}
 
-      {tools.map((element) => {
-        return(
-          <Category text={element} />
-        )
+      {tools.map((element, index) => {
+        return (
+          <Category
+            key={index}
+            text={element}
+            filters={filters}
+            setFilters={setFilters}
+          />
+        );
       })}
+    </section>
+  );
+};
 
-  </section>
-  )
-}
-
-export default CategoriesList
+export default CategoriesList;
