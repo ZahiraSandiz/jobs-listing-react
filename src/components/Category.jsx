@@ -22,19 +22,33 @@ const styleCategory = css`
     background-color: #5ca5a5;
   }
 `;
-// Si la categoria fue clickeada (seleccionada) ahi van estos estilos...
-// .categories-list > .category--selected {
-//   cursor: default;
-//   background: #5ca5a5;
-//   color: #eff6f6;
-// }
 
 const Category = (props) => {
   const { text, filters, setFilters } = props;
+
+  const active = filters.some((f) => {
+    return text === f;
+  });
+
+  const styleCategoryActive = css`
+    cursor: default;
+    background: #5ca5a5;
+    color: #eff6f6;
+  `;
+
+  const stylesArray = [styleCategory];
+
+  if (active) {
+    stylesArray.push(styleCategoryActive);
+  }
+
   return (
     <span
-      css={styleCategory}
+      css={stylesArray}
       onClick={() => {
+        if (active) {
+          return;
+        }
         setFilters([...filters, text]);
       }}
     >

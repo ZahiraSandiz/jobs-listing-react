@@ -65,15 +65,31 @@ const wrapButtons = css`
 const FilterBar = (props) => {
   const { filters, setFilters } = props;
 
+  if (filters.length < 1) {
+    return null;
+  }
+
   return (
     <div css={wrap}>
       <div css={wrapButtons}>
-        {filters.map((filter, index) => (
-          <Filter key={filter} setFilters={setFilters} filter={filter} />
+        {filters.map((currentFilter, index) => (
+          <Filter
+            key={index + currentFilter}
+            filters={filters}
+            setFilters={setFilters}
+            currentFilter={currentFilter}
+          />
         ))}
       </div>
 
-      <button css={buttonClear}>Clear</button>
+      <button
+        css={buttonClear}
+        onClick={() => {
+          setFilters([]);
+        }}
+      >
+        Clear
+      </button>
     </div>
   );
 };
