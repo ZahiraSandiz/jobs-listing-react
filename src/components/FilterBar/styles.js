@@ -35,7 +35,7 @@ const buttonClear = css`
   cursor: pointer;
   border: none;
   background-color: transparent;
-  color: #7c8f8f;
+  color: #143565e3;
   padding: 10px 6px 10px 10px;
   font-weight: 700;
   font-size: 16px;
@@ -46,7 +46,7 @@ const buttonClear = css`
   transition: all 0.6s;
 
   &:hover {
-    color: #5ca5a5;
+    color: #132743;
     text-decoration: underline;
   }
 

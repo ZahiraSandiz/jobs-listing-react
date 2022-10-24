@@ -39,9 +39,11 @@ const Card = (props) => {
         <div css={headerCard}>
           <p css={companyName}>{company}</p>
           <div css={wrapFeaturedMessages}>
-            {isNew && <FeaturedMessage text="NEW!" background="green" />}
+            {isNew && <FeaturedMessage text="NEW!" background="new" />}
 
-            {featured && <FeaturedMessage text="FEATURED" background="black" />}
+            {featured && (
+              <FeaturedMessage text="FEATURED" background="featured" />
+            )}
           </div>
         </div>
 

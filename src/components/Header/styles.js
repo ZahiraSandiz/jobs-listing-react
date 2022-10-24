@@ -14,7 +14,7 @@ const header = css`
   }
 
   height: 156px;
-  background-color: #5ca5a5;
+  background-color: #132743;
   background-image: url(${imageBackground});
   animation: 20s linear infinite alternate none running header;
 `;

@@ -36,7 +36,7 @@ const headerCard = css`
 `;
 
 const companyName = css`
-  color: #5ca5a5;
+  color: #132743;
   font-weight: 700;
   font-size: 13px;
   line-height: 12px;
@@ -62,11 +62,11 @@ const stylePosition = css`
   font-weight: 700;
   font-size: 15px;
   line-height: 24px;
-  color: #2b3939;
+  color: #143565e3;
   transition: all 0.3s;
 
   &:hover {
-    color: #5ca5a5;
+    color: #132743;
   }
 
   @media (min-width: 1024px) {
@@ -80,7 +80,7 @@ const moreInformation = css`
   font-size: 16px;
   line-height: 24px;
   letter-spacing: -0.123077px;
-  color: #7c8f8f;
+  color: #566377;
   padding-right: 25px;
   min-width: 215px;
   max-width: 250px;
@@ -103,13 +103,13 @@ const point = css`
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background-color: #b7c4c4;
+  background-color: #8f9bae;
 `;
 
 const line = css`
   margin: 15px 0 16px;
   height: 1px;
-  background-color: #b7c4c4;
+  background-color: #8f9bae;
   @media (min-width: 1024px) {
     display: none;
   }
@@ -117,8 +117,7 @@ const line = css`
 
 const getJobCardStyles = (featured) => {
   return css`
-    border-left: ${featured === true ? "5px solid #5ca5a5" : ""};
-    background-color: #c8c8c8;
+    border-left: ${featured === true ? "5px solid #132743" : ""};
     padding: 32px 24px 24px;
     position: relative;
     width: 100%;

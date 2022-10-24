@@ -15,7 +15,7 @@ const styles = css`
     font-family: "League Spartan", sans-serif;
     font-weight: 500;
     font-size: 15px;
-    background-color: #effafa;
+    background-color: #ffcbcb4d;
     -webkit-font-smoothing: antialiased;
   }
 `;

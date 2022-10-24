@@ -20,8 +20,8 @@ const styleFilter = css`
 const category = css`
   user-select: none;
   height: 32px;
-  color: #5ca5a5;
-  background-color: #eff6f6;
+  color: #132743;
+  background-color: #dfedff73;
   font-size: 16px;
   font-weight: 700;
   border-radius: 4px 0 0 4px;
@@ -36,13 +36,13 @@ const deleteCategory = css`
   width: 32px;
   height: 32px;
   border: none;
-  background-color: #5ca5a5;
+  background-color: #143565e3;
   border-radius: 0 4px 4px 0;
   position: relative;
   transition: all 0.3s;
 
   &:hover {
-    background: #2b3939;
+    background: #132743;
   }
 
   :before,

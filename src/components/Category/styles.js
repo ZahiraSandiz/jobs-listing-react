@@ -3,8 +3,8 @@ import { css } from "@emotion/react";
 const styleCategory = css`
   user-select: none;
   height: 32px;
-  color: #5ca5a5;
-  background-color: #eff6f6;
+  color: #132743;
+  background-color: #dfedff73;
   font-size: 16px;
   font-weight: 700;
   border-radius: 4px 0 0 4px;
@@ -19,14 +19,14 @@ const styleCategory = css`
 
   &:hover {
     color: #ffffff;
-    background-color: #5ca5a5;
+    background-color: #143565e3;
   }
 `;
 
 const styleCategoryActive = css`
   cursor: default;
-  background: #5ca5a5;
-  color: #eff6f6;
+  background: #143565e3;
+  color: #dfedff;
 `;
 
 export { styleCategory, styleCategoryActive };

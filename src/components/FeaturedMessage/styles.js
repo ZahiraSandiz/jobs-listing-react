@@ -7,10 +7,10 @@ const getMessageStyles = (background) => {
     font-size: 14px;
     line-height: 14px;
     letter-spacing: -0.107692px;
-    color: #effafa;
+    color: #f1f7ff;
     padding: 7px 8px 3px;
     border-radius: 12px;
-    background-color: ${background === "green" ? "#5ca5a5" : "#2b3939"};
+    background-color: ${background === "new" ? "#93c1fa" : "#132743"};
   `;
 };
 
