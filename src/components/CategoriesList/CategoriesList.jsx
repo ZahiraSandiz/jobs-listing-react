@@ -1,16 +1,6 @@
-import { css } from "@emotion/react";
-import Category from "./Category";
+import { list } from "./styles";
 
-const list = css`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-
-  @media (min-width: 1024px) {
-    margin-left: auto;
-    max-width: 40%;
-  }
-`;
+import Category from "../Category/Category";
 
 const CategoriesList = (props) => {
   const { role, level, languages, tools, filters, setFilters } = props;

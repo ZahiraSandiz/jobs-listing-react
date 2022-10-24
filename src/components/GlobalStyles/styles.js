@@ -1,5 +1,4 @@
-import { css, Global, useTheme } from "@emotion/react";
-
+import { css } from "@emotion/react";
 
 const styles = css`
   *,
@@ -21,8 +20,4 @@ const styles = css`
   }
 `;
 
-const GlobalStyles = () => {
-  return <Global styles={styles} />;
-};
-
-export default GlobalStyles;
+export { styles };

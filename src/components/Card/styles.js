@@ -1,6 +1,4 @@
 import { css } from "@emotion/react";
-import FeaturedMessage from "./FeaturedMessage";
-import CategoriesList from "./CategoriesList";
 
 const image = css`
   user-select: none;
@@ -117,25 +115,8 @@ const line = css`
   }
 `;
 
-const Card = (props) => {
-  const {
-    company,
-    logo,
-    isNew,
-    featured,
-    position,
-    role,
-    level,
-    postedAt,
-    contract,
-    location,
-    languages,
-    tools,
-    filters,
-    setFilters,
-  } = props;
-
-  const jobCard = css`
+const getJobCardStyles = (featured) => {
+  return css`
     border-left: ${featured === true ? "5px solid #5ca5a5" : ""};
     background-color: #c8c8c8;
     padding: 32px 24px 24px;
@@ -185,45 +166,17 @@ const Card = (props) => {
     animation-duration: 1s;
     animation-name: flipInX;
   `;
-
-  return (
-    <article css={jobCard}>
-      <img css={image} src={logo} alt="Company logo" />
-      <section css={wrapInformation}>
-        <div css={headerCard}>
-          <p css={companyName}>{company}</p>
-          <div css={wrapFeaturedMessages}>
-            {isNew && <FeaturedMessage text="NEW!" background="green" />}
-
-            {featured && <FeaturedMessage text="FEATURED" background="black" />}
-          </div>
-        </div>
-
-        <div>
-          <p css={stylePosition}>{position}</p>
-        </div>
-
-        <div css={moreInformation}>
-          <span>{postedAt}</span>
-          <span css={point}></span>
-          <span>{contract}</span>
-          <span css={point}></span>
-          <span>{location}</span>
-        </div>
-      </section>
-
-      <div css={line}></div>
-
-      <CategoriesList
-        role={role}
-        level={level}
-        languages={languages}
-        tools={tools}
-        filters={filters}
-        setFilters={setFilters}
-      />
-    </article>
-  );
 };
 
-export default Card;
+export {
+  image,
+  wrapInformation,
+  headerCard,
+  companyName,
+  wrapFeaturedMessages,
+  stylePosition,
+  moreInformation,
+  point,
+  line,
+  getJobCardStyles,
+};

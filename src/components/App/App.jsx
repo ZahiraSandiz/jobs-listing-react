@@ -1,19 +1,9 @@
-import { css } from "@emotion/react";
+import { containerContent } from "./styles";
 import { useState } from "react";
 
-import ContainerCards from "./ContainerCards";
-import FilterBar from "./FilterBar";
-import Header from "./Header";
-
-const containerContent = css`
-  padding: 0 6.4%;
-  margin-bottom: 34px;
-
-  @media (min-width: 1024px) {
-    padding: 0 11.46%;
-    margin-bottom: 120px;
-  }
-`;
+import ContainerCards from "../ContainerCards/ContainerCards";
+import FilterBar from "../FilterBar/FilterBar";
+import Header from "../Header/Header";
 
 function App() {
   const [filters, setFilters] = useState([]);
