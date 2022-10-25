@@ -32,9 +32,11 @@ const Card = (props) => {
     setFilters,
   } = props;
 
+  const imgUrl = new URL(`/${logo}`, import.meta.url).href;
+
   return (
     <article css={getJobCardStyles(featured)}>
-      <img css={image} src={logo} alt="Company logo" />
+      <img css={image} src={imgUrl} alt="Company logo" />
       <section css={wrapInformation}>
         <div css={headerCard}>
           <p css={companyName}>{company}</p>
